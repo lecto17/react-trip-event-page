@@ -1,0 +1,61 @@
+.btn-wrapper {
+    margin: 100px 0 150px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    width: 80px;
+    height: 40px;
+}
+
+.btn1 {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease 0s;
+}
+.btn1:hover {
+    cursor: pointer;
+    background-color: #2EE59D;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 13px rgba(46, 229, 157, 0.3);
+    color: white;
+    font-weight: 600;
+}
+
+.btn2 {
+    border: none;
+    border-radius: 15px;
+    -webkit-transition: all 500ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 500ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    box-shadow: rgba(97, 96, 96, 0.3) 0 0px 0px 2px inset; /*inset: 박스 안쪽에 그림자를 넣는다.*/
+}
+.btn2:hover {
+    cursor: pointer;
+    box-shadow: rgba(189, 135, 240, 0.945) 0 0px 0px 40px inset;
+    color: white;
+    font-weight: 600;
+}
+
+.btn3 {
+    background-color:#2ecc71;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    overflow: hidden;
+}
+.btn3::after {
+    color: #2ecc71;
+    left: -35%;
+    transform: skew(50deg);
+    transition-duration: 0.6s;
+    transform-origin: top left;
+}
+.btn3:hover:after {
+    cursor: pointer;
+    width: 135%;
+    height: 100%;
+}
