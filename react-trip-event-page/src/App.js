@@ -1,36 +1,39 @@
 import React, {useState, useEffect} from 'react';
 import Home from './pages/Home';
+import LocationInfo from './components/LocationInfo';
+import styled from 'styled-components';
+import * as config from './config';
 import axios from 'axios';
+import MyWish from './components/MyWish';
 
 function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [info, setInfo] = useState(null);
+  const [locationInfo, setLocationInfo] = useState(null);
+  const [categoryInfo, setCategoryInfo] = useState(null);
 
   useEffect(() => {
-    console.log("1");
     const fetchTripInfo = async () => {
       try {
         setError(null);
         setLoading(true);
 
-        console.log("2");
-        const response = await axios.get(
-          'https://d2828c62-eb78-4052-8143-257d053b1240.mock.pstmn.io/trips/'
+        // 지역별 정보 가져오는 API
+        const location = await axios.get(
+          config.LOCATION_API
         )
-        console.log("res: ", response)
-        // await axios({
-        //   method: 'get',
-        //   url: "https://d2828c62-eb78-4052-8143-257d053b1240.mock.pstmn.io/trips",
-        //   responseType: 'json'
-        // }).then((result) => {
-        //   const res = result.data;
-        //   console.log("ddd: ", res);
-        // })
-        console.log("3");
+
+        //카테고리 정보 및 카테고리 별 데이터 가져오는 API
+        const category = await axios.get(
+          config.CATEGORY_API
+        )
+
+        console.log("l: ", location);
+        console.log("c: ", category);
+        setLocationInfo(location);
+        setCategoryInfo(category);
 
       } catch (e) {
-        console.log("e: ", e);
         setError(e);
       }
       
@@ -42,11 +45,19 @@ function App() {
 
   if (loading) return <div>로딩 중...</div>
   return (
-    <div>
+    <Container>
       {/* {info} */}
       <Home/>
-    </div>
+      <LocationInfo location={locationInfo}/>
+      <MyWish category={categoryInfo}/>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  flex: 1;
+  justify-content: center;
+  width: 800px;
+`;
 
 export default App;
