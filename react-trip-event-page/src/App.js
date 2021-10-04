@@ -10,7 +10,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [locationInfo, setLocationInfo] = useState([]);
-  const [categoryInfo, setCategoryInfo] = useState(null);
+  const [categoryInfo, setCategoryInfo] = useState([]);
+  const [cateState, setCateState] = useState(1);
 
   useEffect(() => {
     const fetchTripInfo = async () => {
@@ -47,15 +48,17 @@ function App() {
       {/* {info} */}
       <Home/>
       <LocationInfo location={locationInfo}/>
-      <MyWish category={categoryInfo}/>
+      <MyWish cateState={cateState} category={categoryInfo}/>
     </Container>
   );
 }
 
 const Container = styled.div`
+  display: flex;
   flex: 1;
-  justify-content: center;
-  width: 800px;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 500px;
 `;
 
 export default App;
