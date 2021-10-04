@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import Category from './Category';
+import CategoryContent from './CategoryContent';
 
-function MyWish({category}){
+function MyWish({ category, cateState }){
   return (
     <>
         <MyWishContainer>
             <MyTitle>
                 # 내가 원하는 제주 여행은?
             </MyTitle>
-            <Category content={category}/>
+            <Category category={category} />
+            <CategoryContent cateState={cateState} category={category} />
+            
         </MyWishContainer>
     </>
   );
