@@ -25,7 +25,7 @@ function CategoryContent({ category, cateState }){
                                 </div>
                                 <div>
                                     <ContentLocation>[{e.location}]</ContentLocation>
-                                    {e.place}
+                                    <ContentPlace>{e.place}</ContentPlace>
                                 </div>
                                 <div>
                                     <OriginCost>{comma(e.origin_cost)}원</OriginCost>
@@ -48,6 +48,7 @@ const CateContentWrapper = styled.div`
     padding: 20px 15px;
     border-radius: 10px;
     background-color: white;
+    flex-wrap: wrap;
 `;
 
 const ContentImg = styled.img`
@@ -74,9 +75,15 @@ const ContentLocation = styled.h5`
     margin: 0;
 `;
 
+const ContentPlace = styled.h6 `
+    margin: 0;
+    font-size: 11px;
+`
+
 const ContentWrapper = styled.div`
-    display: inline-block;
     width: 45%;
+    display: inline-flex;
+    flex-direction: column;
 `;
 
 const OriginCost = styled.span `
