@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import Category from './Category';
 
-function MyWish(){
+function MyWish({category}){
   return (
     <>
         <MyWishContainer>
             <MyTitle>
                 # 내가 원하는 제주 여행은?
             </MyTitle>
-            
+            <Category content={category}/>
         </MyWishContainer>
     </>
   );

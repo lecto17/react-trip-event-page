@@ -4,24 +4,31 @@ import LocationInfoContent from './LocationInfoContent';
 import styled from 'styled-components';
 import Proptypes from 'prop-types';
 
-const LocationInfo = ({location = Object}) => {
+const LocationInfo = ({location}) => {
   return (
     <>
-        {location.data.locations.map(el => console.log("el:", el))}
         <LocContainer>
             <Title><Bold>제주 쉬기좋은</Bold><Text> 지역별 안내</Text></Title>
             <h6>""</h6>
             <Map/>
         
-            {/* {   
-                location.data.locations.map((el) => {
+            {   
+                location.map((el) => {
                     <LocationInfoContent content={el}/>
                 })
-            } */}
+            }
         </LocContainer>
     </>
   );
 };
+
+// LocationInfo.defaultProps = {
+//     location: {
+//         data : {
+            
+//         }
+//     }
+// }
 
 // LocationInfo.propTypes = {
 //     location: Proptypes.object,

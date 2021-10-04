@@ -9,7 +9,7 @@ import MyWish from './components/MyWish';
 function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [locationInfo, setLocationInfo] = useState(null);
+  const [locationInfo, setLocationInfo] = useState([]);
   const [categoryInfo, setCategoryInfo] = useState(null);
 
   useEffect(() => {
@@ -19,18 +19,16 @@ function App() {
         setLoading(true);
 
         // 지역별 정보 가져오는 API
-        const location = await axios.get(
+        const { data: { locations } } = await axios.get(
           config.LOCATION_API
         )
 
         //카테고리 정보 및 카테고리 별 데이터 가져오는 API
-        const category = await axios.get(
+        const { data: { category }} = await axios.get(
           config.CATEGORY_API
         )
 
-        console.log("l: ", location);
-        console.log("c: ", category);
-        setLocationInfo(location);
+        setLocationInfo(locations);
         setCategoryInfo(category);
 
       } catch (e) {
