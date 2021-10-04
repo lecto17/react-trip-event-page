@@ -44,7 +44,7 @@ const ContentImg = styled.img`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  vertical-align: middle;
+  margin: auto 0;
 `;
 
 const ContentId = styled.h2`

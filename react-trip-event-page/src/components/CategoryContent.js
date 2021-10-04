@@ -41,7 +41,7 @@ function CategoryContent({ category, cateState }){
 };
 
 const CateContentWrapper = styled.div`
-    margin: 20px;
+    margin: 30px;
     padding: 20px 15px;
     border-radius: 10px;
     background-color: white;
