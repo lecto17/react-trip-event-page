@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 
 function CategoryContent({ category, cateState }){
+    const comma = (num) => {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
   return (
     <>
         <CateContentWrapper>
@@ -25,8 +28,8 @@ function CategoryContent({ category, cateState }){
                                     {e.place}
                                 </div>
                                 <div>
-                                    {e.origin_cost}
-                                    <b>{e.discount_cost}~</b>
+                                    <OriginCost>{comma(e.origin_cost)}원</OriginCost>
+                                    <b> {comma(e.discount_cost)}원~</b>
                                 </div>
 
                             </ContentWrapper>   
@@ -74,6 +77,10 @@ const ContentLocation = styled.h5`
 const ContentWrapper = styled.div`
     display: inline-block;
     width: 45%;
+`;
+
+const OriginCost = styled.span `
+    text-decoration: line-through
 `;
 
 export default CategoryContent;
