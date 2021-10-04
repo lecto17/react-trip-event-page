@@ -11,10 +11,11 @@ const LocationInfo = ({location}) => {
             <Title><Bold>제주 쉬기좋은</Bold><Text> 지역별 안내</Text></Title>
             <h6>""</h6>
             <Map/>
-        
             {   
                 location.map((el) => {
-                    <LocationInfoContent content={el}/>
+                    return (
+                        <LocationInfoContent content={el} key={el.id}/>
+                    )
                 })
             }
         </LocContainer>
@@ -39,17 +40,18 @@ const LocContainer = styled.div`
     padding: 30px 0 40px;
 `;
 
-const Title = styled.h2`
+const Title = styled.h3`
     margin: 0;
     padding-top: 20px;
     text-align: center;
+    text-shadow: 2px 2px 4px gray;
 `;
 
-const Bold = styled.h2`
+const Bold = styled.h3`
     color: green;
     display: inline;
 `;
-const Text = styled.h2`
+const Text = styled.h3`
     display: inline;
 `;
 
