@@ -16,7 +16,7 @@ const Home = () => {
 
 const IMG = styled.img`
     max-width: 100%;
-    height: auto;
+    display: flex;
 `;
 
 export default Home;
