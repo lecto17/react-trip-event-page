@@ -6,41 +6,41 @@ function CategoryContent({ category, cateState }){
     const comma = (num) => {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
-  return (
-    <>
-        <CateContentWrapper>
-        {
-            category.map(el => {
-                return el.id === cateState ?
-                (
-                    el.contents.map(e => {
-                        return (
-                            <ContentWrapper>
-                                <div>
-                                    <ContentImg src={e.img_url} />
-                                </div>
-                                <div>
-                                    <TicketType>{e.ticket_type}</TicketType>
-                                    <DiscountRate>{e.discount_rate}</DiscountRate>
-                                </div>
-                                <div>
-                                    <ContentLocation>[{e.location}]</ContentLocation>
-                                    <ContentPlace>{e.place}</ContentPlace>
-                                </div>
-                                <div>
-                                    <OriginCost>{comma(e.origin_cost)}원</OriginCost>
-                                    <b> {comma(e.discount_cost)}원~</b>
-                                </div>
+    return (
+        <>
+            <CateContentWrapper>
+            {
+                category.map(el => {
+                    return el.id === cateState ? 
+                    (
+                        el.contents.map(e => {
+                            return (
+                                <ContentWrapper key={e.id}>
+                                    <div>
+                                        <ContentImg src={e.img_url} />
+                                    </div>
+                                    <div>
+                                        <TicketType>{e.ticket_type}</TicketType>
+                                        <DiscountRate>{e.discount_rate}</DiscountRate>
+                                    </div>
+                                    <div>
+                                        <ContentLocation>[{e.location}]</ContentLocation>
+                                        <ContentPlace>{e.place}</ContentPlace>
+                                    </div>
+                                    <div>
+                                        <OriginCost>{comma(e.origin_cost)}원</OriginCost>
+                                        <b> {comma(e.discount_cost)}원~</b>
+                                    </div>
 
-                            </ContentWrapper>   
-                        )
-                    })
-                ) : (<></>) 
-            })
-        }
-        </CateContentWrapper>
-    </>
-  );
+                                </ContentWrapper>   
+                            )
+                        })
+                    ) : (<></>) 
+                })
+            }
+            </CateContentWrapper>
+        </>
+    );
 };
 
 const CateContentWrapper = styled.div`
@@ -64,6 +64,7 @@ const TicketType = styled.h5`
 
 const DiscountRate = styled.div`
     display: inline;
+    float: right;
     padding: 2px;
     color: white;
     background-color: orange;
@@ -81,9 +82,13 @@ const ContentPlace = styled.h6 `
 `
 
 const ContentWrapper = styled.div`
-    width: 45%;
+    width: auto;
+    margin: 10px 20px;
     display: inline-flex;
     flex-direction: column;
+    &:hover {
+        cursor: pointer;
+    };
 `;
 
 const OriginCost = styled.span `
