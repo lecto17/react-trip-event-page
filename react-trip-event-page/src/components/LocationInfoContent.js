@@ -5,20 +5,42 @@ function LocationInfoContent({content}){
   return (
     <>
       <LocContentContainer>
-        <ImgWrapper>
-          <ContentImg src={content.img_url}/>
-        </ImgWrapper>
-        <ContentWrapper>
-          <div>
-            <ContentId>{ content.id < 10 ? "0"+content.id : content.id}.</ContentId>
-            <h2 style={{display: "inline"}}>{content.title}</h2>
-          </div>
-          <div>
-            <ContentData>{content.desc}</ContentData>
-            <Sight>추천명소: {content.sights}</Sight>
-          </div>  
-        </ContentWrapper>
-      </LocContentContainer>
+        {
+          content.id % 2 == 1 ? (
+            <>
+              <ImgWrapper noLeftMargin>
+                <ContentImg src={content.img_url}/>
+              </ImgWrapper>
+              <ContentWrapper>
+                <div>
+                  <ContentId>{ content.id < 10 ? "0"+content.id : content.id}.</ContentId>
+                  <h2 style={{display: "inline"}}>{content.title}</h2>
+                </div>
+                <div>
+                  <ContentData>{content.desc}</ContentData>
+                  <Sight>추천명소: {content.sights}</Sight>
+                </div>  
+              </ContentWrapper>
+            </>
+          ) : (
+            <>
+              <ContentWrapper>
+                <div>
+                  <ContentId>{ content.id < 10 ? "0"+content.id : content.id}.</ContentId>
+                  <h2 style={{display: "inline"}}>{content.title}</h2>
+                </div>
+                <div>
+                  <ContentData>{content.desc}</ContentData>
+                  <Sight>추천명소: {content.sights}</Sight>
+                </div>  
+              </ContentWrapper>
+              <ImgWrapper>
+                <ContentImg src={content.img_url}/>
+              </ImgWrapper>
+            </>
+          )
+        }
+        </LocContentContainer>
     </>
   );
 };
@@ -31,7 +53,7 @@ const LocContentContainer = styled.div`
 
 const ImgWrapper = styled.div`
   display: inline;
-  margin: 0px 20px;
+  margin: ${(props) => (props.noLeftMargin ? '0 20px 0 0' : '0 0 0 20px')};
 `;
 
 const ContentImg = styled.img`
@@ -56,11 +78,11 @@ const ContentId = styled.h2`
 const ContentData = styled.h6`
   margin: 0;
   display: inline-block; 
-  width: 300px; 
+  width: 250px; 
   
   white-space: normal; 
-  line-height: 1.2;
-  height: 3.6em;
+  // line-height: 1.2;
+  // height: 3.6em;
 `;
 
 const Sight = styled.h6`
