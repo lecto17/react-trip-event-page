@@ -3,16 +3,18 @@ import styled from 'styled-components';
 import Category from './Category';
 import CategoryContent from './CategoryContent';
 
-function MyWish({ category, cateState }){
+function MyWish({ category, cateState, setCateState }){
   return (
     <>
         <MyWishContainer>
             <MyTitle>
                 # 내가 원하는 제주 여행은?
             </MyTitle>
-            <Category category={category} />
+            <Category category={category} cateState={cateState} setCateState={setCateState} />
             <CategoryContent cateState={cateState} category={category} />
-            <MoreButton>제주 상품 더 보기</MoreButton>
+            <div style={{ display: "flex", justifyContent: "center", margin: "10px 0 40px"}}>
+                <MoreButton>제주 상품 더 보기</MoreButton>
+            </div>
         </MyWishContainer>
     </>
   );
@@ -37,6 +39,9 @@ const MoreButton = styled.button `
     border: none;
     border-radius: 30px;
     font-size: 16px;
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 export default MyWish;
