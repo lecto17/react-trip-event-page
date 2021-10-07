@@ -2,7 +2,7 @@
   "name": "react-trip-event-page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://react-trip-event.github.io/",
+  "homepage": "https://lecto17.github.io/react-trip-event-page/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
