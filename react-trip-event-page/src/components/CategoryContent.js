@@ -12,7 +12,7 @@ function CategoryContent({ category, cateState }){
             {
                 category.map(el => {
                     return el.id === cateState ? 
-                    (
+                    ( 
                         el.contents.map(e => {
                             return (
                                 <ContentWrapper key={e.id}>
@@ -31,7 +31,6 @@ function CategoryContent({ category, cateState }){
                                         <OriginCost>{comma(e.origin_cost)}원</OriginCost>
                                         <b> {comma(e.discount_cost)}원~</b>
                                     </div>
-
                                 </ContentWrapper>   
                             )
                         })
@@ -48,7 +47,9 @@ const CateContentWrapper = styled.div`
     padding: 20px 15px;
     border-radius: 10px;
     background-color: white;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 `;
 
 const ContentImg = styled.img`
