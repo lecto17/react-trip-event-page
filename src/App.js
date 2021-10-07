@@ -48,7 +48,7 @@ function App() {
       {/* {info} */}
       <Home/>
       <LocationInfo location={locationInfo}/>
-      <MyWish cateState={cateState} category={categoryInfo}/>
+      <MyWish cateState={cateState} setCateState={setCateState} category={categoryInfo}/>
     </Container>
   );
 }

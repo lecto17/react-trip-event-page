@@ -13,7 +13,7 @@ function MyWish({ category, cateState, setCateState }){
             <Category category={category} cateState={cateState} setCateState={setCateState} />
             <CategoryContent cateState={cateState} category={category} />
             <div style={{ display: "flex", justifyContent: "center", margin: "10px 0 40px"}}>
-                <MoreButton>제주 상품 더 보기</MoreButton>
+                <MoreButton onClick={() => alert("준비 중입니다.")}>제주 상품 더 보기</MoreButton>
             </div>
         </MyWishContainer>
     </>

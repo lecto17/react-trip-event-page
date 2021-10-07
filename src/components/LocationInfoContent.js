@@ -6,7 +6,7 @@ function LocationInfoContent({content}){
     <>
       <LocContentContainer>
         {
-          content.id % 2 == 1 ? (
+          content.id % 2 === 1 ? (
             <>
               <ImgWrapper noLeftMargin>
                 <ContentImg src={content.img_url}/>
