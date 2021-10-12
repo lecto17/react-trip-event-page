@@ -1,46 +1,52 @@
 import React from 'react';
 import styled from 'styled-components';
+import FadeIn from 'react-fade-in/lib/FadeIn';
 
 function LocationInfoContent({content}){
   return (
     <>
-      <LocContentContainer>
-        {
-          content.id % 2 === 1 ? (
-            <>
-              <ImgWrapper noLeftMargin>
-                <ContentImg src={content.img_url}/>
-              </ImgWrapper>
-              <ContentWrapper>
-                <div>
-                  <ContentId>{ content.id < 10 ? "0"+content.id : content.id}.</ContentId>
-                  <h2 style={{display: "inline"}}>{content.title}</h2>
-                </div>
-                <div>
-                  <ContentData>{content.desc}</ContentData>
-                  <Sight>추천명소: {content.sights}</Sight>
-                </div>  
-              </ContentWrapper>
-            </>
-          ) : (
-            <>
-              <ContentWrapper>
-                <div>
-                  <ContentId>{ content.id < 10 ? "0"+content.id : content.id}.</ContentId>
-                  <h2 style={{display: "inline"}}>{content.title}</h2>
-                </div>
-                <div>
-                  <ContentData>{content.desc}</ContentData>
-                  <Sight>추천명소: {content.sights}</Sight>
-                </div>  
-              </ContentWrapper>
-              <ImgWrapper>
-                <ContentImg src={content.img_url}/>
-              </ImgWrapper>
-            </>
-          )
-        }
+      <FadeIn
+        delay={content.id * "500"}
+        // transitionDuration="1000"
+      >  
+        <LocContentContainer>
+          {
+            content.id % 2 === 1 ? (
+              <>
+                <ImgWrapper noLeftMargin>
+                  <ContentImg src={content.img_url}/>
+                </ImgWrapper>
+                <ContentWrapper>
+                  <div>
+                    <ContentId>{ content.id < 10 ? "0"+content.id : content.id}.</ContentId>
+                    <h2 style={{display: "inline"}}>{content.title}</h2>
+                  </div>
+                  <div>
+                    <ContentData>{content.desc}</ContentData>
+                    <Sight>추천명소: {content.sights}</Sight>
+                  </div>  
+                </ContentWrapper>
+              </>
+            ) : (
+              <>
+                <ContentWrapper>
+                  <div>
+                    <ContentId>{ content.id < 10 ? "0"+content.id : content.id}.</ContentId>
+                    <h2 style={{display: "inline"}}>{content.title}</h2>
+                  </div>
+                  <div>
+                    <ContentData>{content.desc}</ContentData>
+                    <Sight>추천명소: {content.sights}</Sight>
+                  </div>  
+                </ContentWrapper>
+                <ImgWrapper>
+                  <ContentImg src={content.img_url}/>
+                </ImgWrapper>
+              </>
+            )
+          }
         </LocContentContainer>
+      </FadeIn>
     </>
   );
 };

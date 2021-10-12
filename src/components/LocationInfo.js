@@ -8,8 +8,10 @@ const LocationInfo = ({location}) => {
   return (
     <>
         <LocContainer>
-            <Title><Bold>제주 쉬기좋은</Bold><Text> 지역별 안내</Text></Title>
-            <h6>""</h6>
+            {/* <FadeIn> */}
+                <Title><Bold>제주 쉬기좋은</Bold><Text> 지역별 안내</Text></Title>
+            {/* </FadeIn> */}
+            {/* <h6>""</h6> */}
             <Map/>
             {   
                 location.map((el) => {
@@ -45,11 +47,19 @@ const Title = styled.h3`
     padding-top: 20px;
     text-align: center;
     text-shadow: 2px 2px 4px gray;
+    text
 `;
 
 const Bold = styled.h3`
     color: green;
     display: inline;
+    background: linear-gradient(to right, transparent 50%, #FFE400 50%);
+    background-size: 200%;
+    transition: 0.5s ease;
+
+    &:hover {
+        background-position: -100% -50%;
+    }
 `;
 const Text = styled.h3`
     display: inline;
