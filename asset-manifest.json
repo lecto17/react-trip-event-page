@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/react-trip-event-page/static/css/main.c6609eb3.chunk.css",
-    "main.js": "/react-trip-event-page/static/js/main.ec857b4e.chunk.js",
-    "main.js.map": "/react-trip-event-page/static/js/main.ec857b4e.chunk.js.map",
-    "runtime-main.js": "/react-trip-event-page/static/js/runtime-main.9a07e2eb.js",
-    "runtime-main.js.map": "/react-trip-event-page/static/js/runtime-main.9a07e2eb.js.map",
-    "static/js/2.24962688.chunk.js": "/react-trip-event-page/static/js/2.24962688.chunk.js",
-    "static/js/2.24962688.chunk.js.map": "/react-trip-event-page/static/js/2.24962688.chunk.js.map",
-    "static/js/3.ce7e00c0.chunk.js": "/react-trip-event-page/static/js/3.ce7e00c0.chunk.js",
-    "static/js/3.ce7e00c0.chunk.js.map": "/react-trip-event-page/static/js/3.ce7e00c0.chunk.js.map",
+    "main.js": "/react-trip-event-page/static/js/main.73428882.chunk.js",
+    "main.js.map": "/react-trip-event-page/static/js/main.73428882.chunk.js.map",
+    "runtime-main.js": "/react-trip-event-page/static/js/runtime-main.aad01e8b.js",
+    "runtime-main.js.map": "/react-trip-event-page/static/js/runtime-main.aad01e8b.js.map",
+    "static/js/2.242f2fdb.chunk.js": "/react-trip-event-page/static/js/2.242f2fdb.chunk.js",
+    "static/js/2.242f2fdb.chunk.js.map": "/react-trip-event-page/static/js/2.242f2fdb.chunk.js.map",
+    "static/js/3.a01ddf83.chunk.js": "/react-trip-event-page/static/js/3.a01ddf83.chunk.js",
+    "static/js/3.a01ddf83.chunk.js.map": "/react-trip-event-page/static/js/3.a01ddf83.chunk.js.map",
     "index.html": "/react-trip-event-page/index.html",
     "static/css/main.c6609eb3.chunk.css.map": "/react-trip-event-page/static/css/main.c6609eb3.chunk.css.map",
-    "static/js/2.24962688.chunk.js.LICENSE.txt": "/react-trip-event-page/static/js/2.24962688.chunk.js.LICENSE.txt",
+    "static/js/2.242f2fdb.chunk.js.LICENSE.txt": "/react-trip-event-page/static/js/2.242f2fdb.chunk.js.LICENSE.txt",
     "static/media/home.d73cbca0.png": "/react-trip-event-page/static/media/home.d73cbca0.png",
     "static/media/map.362875f4.png": "/react-trip-event-page/static/media/map.362875f4.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9a07e2eb.js",
-    "static/js/2.24962688.chunk.js",
+    "static/js/runtime-main.aad01e8b.js",
+    "static/js/2.242f2fdb.chunk.js",
     "static/css/main.c6609eb3.chunk.css",
-    "static/js/main.ec857b4e.chunk.js"
+    "static/js/main.73428882.chunk.js"
   ]
 }
